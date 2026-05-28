@@ -21,15 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
+      - uses: ./.github/actions/setup
 
       - uses: actions/configure-pages@v5
-
-      - run: npm ci
 
       - name: Build app for GitHub Pages
         run: npm run build -- --base-href "/${{ github.event.repository.name }}/"
