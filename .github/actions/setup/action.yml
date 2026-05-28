@@ -4,8 +4,6 @@ description: Checkout repository, setup Node.js 22 with npm cache, and install d
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v4
-
     - uses: actions/setup-node@v4
       with:
         node-version: '22'
